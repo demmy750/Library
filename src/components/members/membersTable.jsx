@@ -9,6 +9,8 @@ function MembersTable() {
   const [selectedMember, setSelectedMember] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
 
+  // const [modalVisible, setModalVisible] = useState(false);
+
   useEffect(() => {
     const fetchMembers = async () => {
       try {
