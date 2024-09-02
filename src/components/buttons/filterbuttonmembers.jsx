@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { IoIosArrowDown } from "react-icons/io";
+import filter from "../../assets/filter.png";
 
 // Modal Component
 const Modal = ({ isOpen, onClose, children }) => {
@@ -137,7 +138,7 @@ export const Filterbuttonmembers = (props) => {
         className="bg-[whitesmoke] border text-black px-4 py-2 text-[18px] rounded-md flex items-center space-x-2"
         onClick={openModal}
       >
-        <img src="/src/assets/filter.png" alt="" className="w-5 h-5" />
+        <img src={filter} alt="" className="w-5 h-5" />
         <span className="ml-2">Filter</span>
         <IoIosArrowDown className="ml-2 mt-0.5 w-4" />
       </button>
