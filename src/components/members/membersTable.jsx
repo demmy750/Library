@@ -29,7 +29,6 @@ function MembersTable() {
   const handleBlockClick = (member) => {
     setSelectedMember(member);
     setModalVisible(true);
-    toast.success("member blocked successfully");
   };
 
   const handleConfirmBlock = async () => {
@@ -42,6 +41,7 @@ function MembersTable() {
           prevMembers.filter((member) => member._id !== selectedMember._id)
         );
         setModalVisible(false);
+        toast.success("member blocked successfully");
       } catch (error) {
         console.error("Failed to block member:", error);
       }
