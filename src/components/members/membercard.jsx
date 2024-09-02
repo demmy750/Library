@@ -7,7 +7,7 @@ export const Membercard = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await api("https://api.example.com/member");
+      const response = await api("");
       try {
         console.log(response.data);
         setMemberpic(response.data);

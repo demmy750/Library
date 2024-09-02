@@ -1,6 +1,7 @@
 import React from "react";
 import { CiBellOn, CiSearch } from "react-icons/ci";
 import { FiMenu } from "react-icons/fi";
+import avatar from "../../assets/Avatar 1.png";
 
 function Navbar() {
   return (
@@ -21,7 +22,7 @@ function Navbar() {
         <div className="flex items-center  ml-4">
           <img
             className="h-10 w-10 rounded-full cursor-pointer"
-            src="../src/assets/Avatar 1.png"
+            src={avatar}
             alt="User Avatar"
           />
           <p className="font-bold ml-2 text-[1rem] hidden md:block  mr-6">

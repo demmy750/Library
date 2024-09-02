@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import api from '../../api/axios'; // Make sure this is the correct path to your axios instance
-import { Pagination } from '../Pagination';
+import React, { useState, useEffect } from "react";
+import api from "../../api/axios"; // Make sure this is the correct path to your axios instance
+import { Pagination } from "../Pagination";
 
 export const BorrowedBook = () => {
   const [books, setBooks] = useState([]);
@@ -10,10 +10,10 @@ export const BorrowedBook = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await api.get(''); // Adjust the URL as needed
+        const response = await api.get("  "); // Adjust the URL as needed
         setBooks(response.data); // Set books data to state
       } catch (err) {
-        setError('Failed to fetch borrowed books'); // Handle errors
+        setError("Failed to fetch borrowed books"); // Handle errors
         console.error(err);
       } finally {
         setIsLoading(false); // Set loading to false once the data is fetched
@@ -27,7 +27,7 @@ export const BorrowedBook = () => {
   if (error) return <div>{error}</div>;
 
   return (
-    <div className='w-full'>
+    <div className="w-full">
       <table className="w-full bg-white rounded-sm shadow">
         <thead className="bg-[#DFFFD0]">
           <tr>
