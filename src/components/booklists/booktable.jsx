@@ -1,0 +1,77 @@
+import React, { useState, useEffect } from "react";
+import { BsThreeDots } from "react-icons/bs";
+import api from "../../api/axios";
+import { useNavigate } from "react-router-dom";
+
+export const BookTable = (props) => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      // setIsLoading(true);
+      try {
+        const response = await api.get(
+          "https://library-management-system-hctm.onrender.com/api/books/?limit&page=2"
+        );
+        props.setBooks(response.data.books);
+      } catch (error) {
+        console.error("Failed to fetch books:", error);
+        // } finally {
+        //   setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  console.log(props.books);
+
+  return (
+    <div className="overflow-x-auto">
+      <table className="min-w-full border-collapse border border-gray-200">
+        <thead className="bg-[#DFFFD0] border-b border-gray-200">
+          <tr>
+            <th className="p-2 text-left">Book Name</th>
+            <th className="p-2 text-left">Category</th>
+            <th className="p-2 text-left">Status</th>
+            <th className="p-2 text-left">Availability</th>
+            <th className="p-2 text-left">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.books?.map((book) => (
+            <tr key={book._id} className="border-b border-gray-200">
+              <td
+                className="p-2 flex items-center gap-4 cursor-pointer"
+                onClick={() => navigate(`/vesti/${book._id}`)}
+              >
+                <img
+                  src={book.image}
+                  alt=""
+                  className="w-16 h-24 object-cover"
+                />
+                <div>
+                  <div className="font-bold text-sm sm:text-base">
+                    {book.title}
+                  </div>
+                  <div className="text-gray-600 text-xs sm:text-sm">
+                    {book.author}
+                  </div>
+                  <div className="text-gray-600 text-xs sm:text-sm">2007</div>
+                </div>
+              </td>
+              <td className="p-2">{book.category}</td>
+              <td className="p-2">
+                {book.quantity < 1 ? "Out of stock" : "Available"}
+              </td>
+              <td className="p-2">Hard copy</td>
+              <td className="p-2 text-right">
+                <BsThreeDots className="text-lg sm:text-xl cursor-pointer" />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};

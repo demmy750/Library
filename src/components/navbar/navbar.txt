@@ -1,0 +1,21 @@
+// import React from 'react';
+// import { CiBellOn, CiSearch } from "react-icons/ci";
+// function Navbar() {
+//   return (
+//     <div className=" p-4 flex justify-between bg-[#FCFCFD] border items-center ml-[2px]">
+//         <div className="relative w-full max-w-lg">
+//           <input type='search' className=" p-2 pl-10 w-full  border  rounded-md ml-3.5 "placeholder="Search for books, members etc..."/>
+//           <CiSearch className="absolute left-5 top-2.5 w-5 h-5  text-[#667085]" />
+//         </div>
+//         <div className='flex items-center '>
+//           <CiBellOn className='h-10 w-8 font-bold cursor-pointer' />
+//           <div className='flex items-center ml-2'>
+//             <img className='cursor-pointer' src='../src/assets/Avatar 1.png' alt=''/>
+//             <p className='font-bold ml-2 mr-4 text-[1.1rem]'>Ovie Victor</p>
+//           </div>
+//         </div>
+//     </div>
+//   );
+// }
+
+// export default Navbar;
