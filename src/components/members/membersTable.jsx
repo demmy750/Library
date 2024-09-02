@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { MdOutlineCancel } from "react-icons/md";
 import { Link } from "react-router-dom";
 import api from "../../api/axios";
+import { toast } from "react-toastify";
 
 function MembersTable() {
   const [Members, setMembers] = useState([]);
@@ -26,6 +27,7 @@ function MembersTable() {
   const handleBlockClick = (member) => {
     setSelectedMember(member);
     setModalVisible(true);
+    toast.success("member blocked successfully");
   };
 
   const handleConfirmBlock = async () => {
