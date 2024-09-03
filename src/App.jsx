@@ -16,7 +16,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // import { Filtermodal1 } from "./components/buttons/filtermodal1";
 import FilterPanel from "./components/buttons/filterPanel";
-// import { Resetpassword } from './resetpassword'
+// import { Resetpassword } from './resetpassword
+import Actionmodal from "./components/booklists/actionmodal";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         {/* <Route path='/memberaccount' element={<MemberAccount/>}/> */}
         <Route path="/resetpassword" element={<Resetpassword />} />
         <Route path="/filtermodalbutton1" element={<FilterPanel />} />
+        <Route path="/actionmodal" element={<Actionmodal />} />
       </Routes>
       <ToastContainer />
     </Router>

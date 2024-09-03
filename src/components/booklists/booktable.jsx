@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import { BsThreeDots } from "react-icons/bs";
 import api from "../../api/axios";
 import { useNavigate } from "react-router-dom";
+import Actionmodal from "./actionmodal";
 
 export const BookTable = (props) => {
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
-      // setIsLoading(true);
       try {
         const response = await api.get(
           "https://library-management-system-hctm.onrender.com/api/books/?limit&page=2"
@@ -16,15 +17,15 @@ export const BookTable = (props) => {
         props.setBooks(response.data.books);
       } catch (error) {
         console.error("Failed to fetch books:", error);
-        // } finally {
-        //   setIsLoading(false);
       }
     };
 
     fetchData();
   }, []);
 
-  console.log(props.books);
+  const Action = () => {
+    setShowModal(!showModal);
+  };
 
   return (
     <div className="overflow-x-auto">
@@ -66,7 +67,11 @@ export const BookTable = (props) => {
               </td>
               <td className="p-2">Hard copy</td>
               <td className="p-2 text-right">
-                <BsThreeDots className="text-lg sm:text-xl cursor-pointer" />
+                <BsThreeDots
+                  className="text-lg sm:text-xl cursor-pointer"
+                  onClick={Action}
+                />
+                {showModal && <Actionmodal />}
               </td>
             </tr>
           ))}
