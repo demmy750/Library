@@ -1,64 +1,135 @@
-import React from 'react';
-import profilepics from '../src/assets/Frame 1618868669.svg';
-import Telephone from '../src/assets/call.svg';
-import house from '../src/assets/house.svg';
+import React from "react";
+import profilepics from "../src/assets/Frame 1618868669.svg";
+import Telephone from "../src/assets/call.svg";
+import house from "../src/assets/house.svg";
 
 export const MemberAccount = () => {
   return (
-    <div className='mt-10 p-4'>
-      <div className='flex flex-col md:flex-row items-center gap-4'>
-        <img className='w-32 md:w-38' src={profilepics} alt='' />
-        <div className='flex flex-col'>
-          <h1 className='font-bold text-xl md:text-2xl'>Ovie Victor</h1>
-          <h3 className='text-sm md:text-base'>Librarian</h3>
+    <div className="mt-10 p-4 ">
+      <div className="flex flex-col md:flex-row items-center gap-4">
+        <img className="w-32 md:w-38" src={profilepics} alt="" />
+        <div className="flex flex-col">
+          <h1 className="font-bold text-xl md:text-2xl">Ovie Victor</h1>
+          <h3 className="text-sm md:text-base">Librarian</h3>
         </div>
       </div>
 
-      <form className='mt-6'>
-        <div className='text-xl font-bold'>Personal information</div>
-        <div className='flex flex-col md:flex-row md:justify-between gap-4 mt-4'>
-          <div className='flex flex-col'>
-            <label htmlFor="firstName" className='border border-white rounded-md flex items-center justify-center w-fit text-xs py-1 px-2 font-bold bg-[#FCFCFD] ml-4 relative z-50 mb-[-5px]'>FIRST NAME</label>
-            <input className='border w-full md:w-[27rem] p-3 rounded-md mt-[-0.5rem]' type="text" id="firstName" name="firstName" placeholder="Ovie" />
+      <form className="mt-6">
+        <div className="text-xl font-bold">Personal information</div>
+        <div className="flex flex-col xl:flex-row md:justify-between   gap-4 mt-4 w-full">
+          <div className="flex flex-col">
+            <label
+              htmlFor="firstName"
+              className="border border-white rounded-md flex items-center justify-center w-fit text-xs py-1 px-2 font-bold bg-[#FCFCFD] ml-4 relative z-30 mb-[-5px]"
+            >
+              FIRST NAME
+            </label>
+            <input
+              className="border w-full xl:w-[480px] xl:[550px]  p-3 rounded-md mt-[-0.5rem]"
+              type="text"
+              id="firstName"
+              name="firstName"
+              placeholder="Ovie"
+            />
           </div>
-          <div className='flex flex-col'>
-            <label htmlFor="lastName" className='border border-white rounded-md flex items-center justify-center w-fit text-xs py-1 px-2 font-bold bg-[#FCFCFD] ml-4 relative z-50 mb-[-5px]'>LAST NAME</label>
-            <input type='text' id="lastName" name="lastName" className='border w-full md:w-[30rem] p-3 mt-[-0.5rem] rounded-md' placeholder="Victor" />
-          </div>
-        </div>
-      </form>
-
-      <form className='mt-6'>
-        <div className='flex flex-col  md:flex-row md:justify-between gap-4'>
-          <div className='flex flex-col'>
-            <label htmlFor="email" className='border border-white rounded-md flex items-center justify-center w-fit text-xs py-1 px-2 font-bold bg-[#FCFCFD] ml-4 relative z-50 mb-[-5px]'>EMAIL ADDRESS</label>
-            <input className='border w-full md:w-[21rem] p-3 rounded-md mt-[-0.5rem]' type="email" id="email" name="email" placeholder="Victorovie8@gmail.com" />
-          </div>
-          <div className='flex flex-col'>
-            <label htmlFor="dateOfBirth" className='border border-white rounded-md flex items-center justify-center w-fit text-xs py-1 px-2 font-bold bg-[#FCFCFD] ml-4 relative z-50 mb-[-5px]'>DATE OF BIRTH</label>
-            <input type="date" id="dateOfBirth" name="dateOfBirth" className='border w-full p-3 mt-[-0.5rem] rounded-md' />
-          </div>
-          <div className='flex flex-col'>
-          <label htmlFor='phoneNumber' className='border border-white rounded-md flex items-center justify-center w-fit text-xs py-1 px-2 font-bold bg-[#FCFCFD] ml-4 relative z-50 mb-[-5px]'>PHONE NUMBER</label>
-          <div className='relative'>
-            <input type='tel' id='phoneNumber' name="phoneNumber" className='border w-full md:w-[25rem] p-3 rounded-md mt-[-0.5rem]' placeholder="08102345678" />
-            <img className='absolute right-4 top-2 w-6 h-6' src={Telephone} alt='' />
-          </div>
-        </div>
-        </div>
-        
-        
-        
-        <div className='flex flex-col mt-6'>
-          <label htmlFor='address' className='border border-white rounded-md flex items-center justify-center w-fit text-xs py-1 px-2 font-bold bg-[#FCFCFD] ml-4 relative z-50 mb-[-5px]'>HOUSE ADDRESS</label>
-          <div className='relative'>
-            <input type='text' id='address' name="address" className='border w-full p-3 rounded-md mt-[-0.5rem]' placeholder="No 5, Ajanlekoko Street, Okokomaiko" />
-            <img className='absolute right-4 top-2 w-6 h-6' src={house} alt='' />
+          <div className="flex flex-col">
+            <label
+              htmlFor="lastName"
+              className="border border-white rounded-md flex items-center justify-center w-fit text-xs py-1 px-2 font-bold bg-[#FCFCFD] ml-4 relative z-30 mb-[-5px]"
+            >
+              LAST NAME
+            </label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              className="border w-full xl:w-[500px]  p-3 mt-[-0.5rem] rounded-md"
+              placeholder="Victor"
+            />
           </div>
         </div>
       </form>
 
-      <form className='mt-6'>
+      <form className="mt-6">
+        <div className="flex flex-col  xl:flex-row md:justify-between gap- w-full">
+          <div className="flex flex-col">
+            <label
+              htmlFor="email"
+              className="border border-white rounded-md flex items-center justify-center w-fit text-xs py-1 px-2 font-bold bg-[#FCFCFD] ml-4 relative z-30 mb-[-5px]"
+            >
+              EMAIL ADDRESS
+            </label>
+            <input
+              className="border w-full xl:w-[400px]  p-3 rounded-md mt-[-0.5rem]"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Victorovie8@gmail.com"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label
+              htmlFor="dateOfBirth"
+              className="border border-white rounded-md flex items-center justify-center w-fit text-xs py-1 px-2 font-bold bg-[#FCFCFD] ml-4 relative z-30 mb-[-5px]"
+            >
+              DATE OF BIRTH
+            </label>
+            <input
+              type="date"
+              id="dateOfBirth"
+              name="dateOfBirth"
+              className="border w-full xl:w-[200px] p-3 mt-[-0.5rem] rounded-md"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label
+              htmlFor="phoneNumber"
+              className="border border-white rounded-md flex items-center justify-center w-fit text-xs py-1 px-2 font-bold bg-[#FCFCFD] ml-4 relative z-30 mb-[-5px]"
+            >
+              PHONE NUMBER
+            </label>
+            <div className="relative">
+              <input
+                type="tel"
+                id="phoneNumber"
+                name="phoneNumber"
+                className="border w-full xl:w-[390px]  p-3 rounded-md mt-[-0.5rem]"
+                placeholder="08102345678"
+              />
+              <img
+                className="absolute right-4 top-2 w-6 h-6"
+                src={Telephone}
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col mt-6">
+          <label
+            htmlFor="address"
+            className="border border-white rounded-md flex items-center justify-center w-fit text-xs py-1 px-2 font-bold bg-[#FCFCFD] ml-4 relative z-50 mb-[-5px]"
+          >
+            HOUSE ADDRESS
+          </label>
+          <div className="relative">
+            <input
+              type="text"
+              id="address"
+              name="address"
+              className="border w-full p-3 rounded-md mt-[-0.5rem]"
+              placeholder="No 5, Ajanlekoko Street, Okokomaiko"
+            />
+            <img
+              className="absolute right-4 top-2 w-6 h-6"
+              src={house}
+              alt=""
+            />
+          </div>
+        </div>
+      </form>
+
+      <form className="mt-6">
         {/* <div className='text-xl font-bold'>Change Password</div>
         <div className='flex flex-col md:flex-row md:justify-between gap-4 mt-4'>
           <div className='flex flex-col'>
@@ -74,11 +145,16 @@ export const MemberAccount = () => {
             <input className='border w-full md:w-[18rem] p-3 rounded-md mt-[-0.5rem]' type='password' id="confirmPassword" name="confirmPassword" placeholder="" />
           </div>
         </div> */}
-        <button className='bg-[#518C36] mt-6 px-6 py-2 text-white rounded-lg' type='submit'>Save Changes</button>
+        <button
+          className="bg-[#518C36] mt-6 px-6 py-2 text-white rounded-lg"
+          type="submit"
+        >
+          Save Changes
+        </button>
       </form>
     </div>
   );
-}
+};
 
 export default MemberAccount;
 
@@ -88,7 +164,7 @@ export default MemberAccount;
 // import house from '../src/assets/house.svg'
 // import { FiPhone } from "react-icons/fi";
 
-// export const MemberAccount = () => {    
+// export const MemberAccount = () => {
 //   return (
 //         <div className='mt-10 p-'>
 //           <div className='flex items-center gap-4'>
@@ -98,7 +174,7 @@ export default MemberAccount;
 //                 <h3 className='text-[15px]'>Librarian</h3>
 //             </div>
 //         </div>
-        
+
 //         <form className='mt-[2rem] w-full '>
 //         <div className='text-[25px] font-bold'>Personal information</div>
 //           <div className=' flex justify-between ' >
@@ -138,7 +214,7 @@ export default MemberAccount;
 //           <div className='flex items-center relative'>
 //           <input type='text' id='address' name="" className='border w-full p-[1.1rem] mt-[-0.8rem] rounded-md z-0'placeholder="No 5, Ajanlekoko Street, Okokomaiko" />
 //             <img className='absolute right-5 top-2' src={house} alt=''/>
-            
+
 //           </div>
 //            </div>
 //         </form>
@@ -162,8 +238,7 @@ export default MemberAccount;
 
 //         </form>
 //         </div>
-    
-    
+
 //   )
 // }
 // export default MemberAccount;
