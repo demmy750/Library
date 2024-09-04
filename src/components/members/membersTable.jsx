@@ -3,8 +3,10 @@ import { MdOutlineCancel } from "react-icons/md";
 import { Link } from "react-router-dom";
 import api from "../../api/axios";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 function MembersTable() {
+  const navigate = useNavigate();
   const [Members, setMembers] = useState([]);
   const [selectedMember, setSelectedMember] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
@@ -69,8 +71,13 @@ function MembersTable() {
         <tbody>
           {Members.map((member) => (
             <tr key={member._id} className="border-b last:border-none">
-              <td className="p-4 text-gray-700">
-                <Link to="/info">{member._id}</Link>
+              <td
+                className="p-4 text-gray-700"
+                onClick={() => navigate(`/info/${member._id}`)}
+              >
+                {member._id}
+
+                {/* <Link to="/info">{member._id}</Link> */}
               </td>
               <td className="p-4 text-gray-700">{member.name}</td>
               <td className="p-4 text-gray-700">{member.email}</td>

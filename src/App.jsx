@@ -29,7 +29,7 @@ function App() {
         <Route path="/books/" element={<BookSection />} />
         <Route path="/vesti/:id" element={<Mainvestidetails />} />
         <Route path="/members" element={<Members />} />
-        <Route path="/info" element={<MainMemberCard />} />
+        <Route path="/info/:id" element={<MainMemberCard />} />
         <Route path="/request" element={<Mainmemberrequest />} />
         <Route path="/membersetting" element={<MemberSettings />} />
         {/* <Route path='/memberaccount' element={<MemberAccount/>}/> */}

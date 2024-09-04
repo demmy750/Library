@@ -10,7 +10,9 @@ export const BorrowedBook = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await api.get("  "); // Adjust the URL as needed
+        const response = await api.get(
+          "https://library-management-system-hctm.onrender.com/api/auth/me/member-stat?period=week"
+        ); // Adjust the URL as needed
         setBooks(response.data); // Set books data to state
       } catch (err) {
         setError("Failed to fetch borrowed books"); // Handle errors
