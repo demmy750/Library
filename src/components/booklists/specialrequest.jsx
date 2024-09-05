@@ -42,7 +42,7 @@ export const Specialrequest = () => {
         <tbody>
           {Special.map((request, index) => (
             <tr key={index} className="border-b last:border-none mt-4">
-              <td className="p-4 text-gray-700">{request.name}</td>
+              <td className="p-4 text-gray-700">{request.userName}</td>
               <td className="p-4 text-gray-700">{request.bookName}</td>
               <td className="p-4 text-gray-700">{request.borrowedDate}</td>
               <td className="p-4 text-gray-700">{request.returnDate}</td>

@@ -7,6 +7,7 @@ import Actionmodal from "./actionmodal";
 export const BookTable = (props) => {
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
+  const [myIndex, setmyIndex] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,8 +41,8 @@ export const BookTable = (props) => {
           </tr>
         </thead>
         <tbody>
-          {props.books?.map((book) => (
-            <tr key={book._id} className="border-b border-gray-200">
+          {props.books?.map((book, index) => (
+            <tr key={index} className="border-b border-gray-200">
               <td
                 className="p-2 flex items-center gap-4 cursor-pointer"
                 onClick={() => navigate(`/vesti/${book._id}`)}

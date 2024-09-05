@@ -1,28 +1,31 @@
 import React, { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
-// import { PiPencilLine } from "react-icons/pi";
-// import { RiDeleteBin6Line } from "react-icons/ri";
-import { Link } from "react-router-dom";
 import Circle from "../../assets/close-circle.svg";
 import { Membercard } from "./membercard";
+import { useParams } from "react-router-dom";
+import api from "../../api/axios";
+import { toast } from "react-toastify";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Memberinfo = () => {
+  const { id } = useParams();
   const [isModalVisible, setModalVisible] = useState(false);
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleBlockMember = async () => {
     try {
-      const response = await fetch(
-        `https://library-management-system-hctm.onrender.com/api/auth/669f9e269c16ccf697c6711e/block`,
-        { method: "PUT" }
+      const response = await api.put(
+        `https://library-management-system-hctm.onrender.com/api/auth/${id}/block`
+        // { method: "PUT" }
       );
 
-      if (!response.ok) {
-        throw new Error("Failed to block member");
-      }
+      console.log(response);
 
-      const data = await response.json();
-      setMessage("Member successfully blocked!");
+      // const data = await response.json();
+      toast.success("member blocked successfully");
+      navigate("/members");
+      // setMessage("Member successfully blocked!");
     } catch (error) {
       setMessage("Error blocking member. Please try again.");
       console.error("Error blocking member", error);

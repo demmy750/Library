@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { BsThreeDots } from "react-icons/bs";
 import api from "./api/axios";
+// import { useParams } from "react-router-dom";
 // import api from "../../api/axios";
 
 export const Request = () => {
   const [books, setBooks] = useState([]);
+  // const { id } = useParams();
 
   useEffect(() => {
     const fetchBooks = async () => {
       try {
         const response = await api.get(
-          "https://library-management-system-hctm.onrender.com/api/requests/"
+          `https://library-management-system-hctm.onrender.com/api/requests/`
         );
         console.log(response.data.requests);
         setBooks(response.data.requests);
@@ -22,13 +24,13 @@ export const Request = () => {
     fetchBooks();
   }, []);
 
-  const formatDate = (date) => {
-    return date ? new Date(date).toLocaleDateString() : "N/A";
-  };
+  // const formatDate = (date) => {
+  //   return date ? new Date(date).toLocaleDateString() : "N/A";
+  // };
 
   return (
     <div className="overflow-x-auto">
-      <table className="min-w-full bg-white rounded-sm shadow">
+      <table className="min-w-full bg-white rounded-sm shadow mt-10">
         <thead className="bg-[#DFFFD0]">
           <tr>
             <th className="p-4 text-left text-[#1D2939]">Member Name</th>
@@ -51,14 +53,18 @@ export const Request = () => {
                 {book.bookName}
               </td>
               <td className="p-4 text-gray-700 whitespace-nowrap">
-                {book.status === "Approved" || book.status === "Returned"
-                  ? formatDate(book.borrowedAt)
-                  : "N/A"}
+                {
+                  book.status === "Approved" || book.status === "Returned"
+                  // ? formatDate(book.borrowedAt)
+                  // : "N/A"?
+                }
               </td>
               <td className="p-4 text-gray-700 whitespace-nowrap">
-                {book.status === "Returned"
-                  ? formatDate(book.returnedAt)
-                  : "N/A"}
+                {
+                  book.status === "Returned"
+                  // ? formatDate(book.returnedAt)
+                  // : "N/A"
+                }
               </td>
               <td
                 className={`${

@@ -51,8 +51,8 @@ export const Mainrequest = () => {
           <tbody>
             {books.map((item, index) => (
               <tr key={index} className="border-b last:border-none">
-                <td className="p-4 text-gray-700">{item.name}</td>
-                <td className="p-4 text-gray-700">{item.bookname}</td>
+                <td className="p-4 text-gray-700">{item.userName}</td>
+                <td className="p-4 text-gray-700">{item.bookName}</td>
                 <td className="p-4 text-gray-700">{item.borroweddate}</td>
                 <td className="p-4 text-gray-700">{item.returndate}</td>
                 <td

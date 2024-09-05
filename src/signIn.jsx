@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Cookies from "js-cookie";
 // import axios from 'axios';
-import api from "./api/axios";
+// import api from "./api/axios";
 import { Button1 } from "./components/buttons/Button1";
 import { Link, useNavigate } from "react-router-dom";
 import vestilogo from "../src/assets/Vestilogo.png";
