@@ -4,7 +4,7 @@ import Sidebar from "./components/sidebars/sidebar";
 import { Filterbutton } from "./components/buttons/filterbutton";
 import { Addnewbook } from "./components/buttons/addnewbook";
 import { BookTable } from "./components/booklists/booktable";
-import { Pagination } from "./components/Pagination";
+// import { Pagination } from "./components/Pagination";
 import api from "./api/axios";
 
 export const BookSection = () => {
@@ -15,7 +15,7 @@ export const BookSection = () => {
     // setIsLoading(true);
     try {
       const response = await api.get(
-        "https://library-management-system-hctm.onrender.com/api/filter?resource=books&status=Available&author=Paulo Coelho"
+        "https://library-management-system-hctm.onrender.com/api/filter?resource=books&status=Available&author="
       );
       console.log(response.data);
       setBooks(response.data);
@@ -40,7 +40,7 @@ export const BookSection = () => {
           </div>
 
           <BookTable books={books} setBooks={setBooks} />
-          <Pagination />
+          {/* <Pagination /> */}
         </div>
       </div>
     </div>

@@ -19,12 +19,12 @@ export const Pagination = () => {
         >
           1
         </button>
-        <button
+        {/* <button
           aria-label="Page 2"
           className="text-sm sm:text-base cursor-pointer"
         >
           2
-        </button>
+        </button> */}
         {/* <button aria-label="Page 3" className='text-sm sm:text-base cursor-pointer'>3</button>
             <p className='text-sm sm:text-base'>......</p>
             <button aria-label="Page 20" className='text-sm sm:text-base cursor-pointer'>20</button> */}

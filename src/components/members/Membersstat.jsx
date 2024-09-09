@@ -8,7 +8,7 @@ function Membersstat() {
   const stats = [
     {
       title: "Active members",
-      value: "18",
+      value: "5",
       icon: (
         <img src={activity} alt="Activity" className="w-6 h-6 text-white" />
       ),
@@ -24,14 +24,14 @@ function Membersstat() {
     },
     {
       title: "Recently added members",
-      value: "3",
+      value: "2",
       icon: <img src={usericon} alt="Recently Added" className="w-6 h-6" />,
       color: "bg-orange-600",
       background: "bg-[#5261BC]",
     },
     {
       title: "Blocked members",
-      value: "21",
+      value: "0",
       icon: <img src={X} alt="Blocked" className="w-6 h-6 text-white" />,
       color: "bg-blue-800",
       background: "bg-[#A35CC5]",

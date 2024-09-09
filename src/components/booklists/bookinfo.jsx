@@ -55,13 +55,13 @@ const Bookinfo = () => {
           <h1 className="font-bold text-[25px]">Book Detail</h1>
         </div>
         <div className="flex gap-2">
-          <Link
+          {/* <Link
             to={`/edit-book/${id}`}
             className="flex items-center gap-1 border cursor-pointer rounded-xl py-2 px-6 bg-[#518C36] text-white"
           >
             <img src={pencil} alt="Edit icon" />
             <p>Edit</p>
-          </Link>
+          </Link> */}
           <div
             className={`flex items-center gap-1 border rounded-lg cursor-pointer px-6 py-2 bg-[#D92D20] text-white ${
               isDeleting ? "opacity-50 cursor-not-allowed" : ""

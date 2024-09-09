@@ -1,0 +1,89 @@
+import React, { useState, useEffect } from "react";
+import { BsThreeDots } from "react-icons/bs";
+import api from "../../api/axios";
+import { useNavigate } from "react-router-dom";
+import Actionmodal from "./actionmodal";
+
+export const BookTable = (props) => {
+  const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
+  const [mybookId, setmyBookId] = useState();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await api.get(
+          "https://library-management-system-hctm.onrender.com/api/books/?limit&page=3"
+        );
+        props.setBooks(response.data.books);
+      } catch (error) {
+        console.error("Failed to fetch books:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const Action = (id) => {
+    setmyBookId(id);
+    setShowModal(!showModal);
+  };
+
+  return (
+    <div className="overflow-x-auto">
+      <table className="min-w-full border-collapse border border-gray-200">
+        <thead className="bg-[#DFFFD0] border-b border-gray-200">
+          <tr>
+            <th className="p-2 text-left">Book Name</th>
+            <th className="p-2 text-left">Category</th>
+            <th className="p-2 text-left">Status</th>
+            <th className="p-2 text-left">Availability</th>
+            <th className="p-2 text-left">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.books?.map((book, index) => (
+            <tr key={index} className="border-b border-gray-200">
+              <td
+                className="p-2 flex items-center gap-4 cursor-pointer"
+                onClick={() => navigate(`/vesti/${book._id}`)}
+              >
+                <img
+                  src={book.image}
+                  alt=""
+                  className="w-16 h-24 object-cover"
+                />
+                <div>
+                  <div className="font-bold text-sm sm:text-base">
+                    {book.title}
+                  </div>
+                  <div className="text-gray-600 text-xs sm:text-sm">
+                    {book.author}
+                  </div>
+                  <div className="text-gray-600 text-xs sm:text-sm">
+                    {book.year}
+                  </div>
+                </div>
+              </td>
+              <td className="p-2">{book.category}</td>
+              <td className="p-2">
+                {book.quantity < 1 ? "Out of stock" : "Available"}
+              </td>
+              <td className="p-2">Hard copy</td>
+              <td className="p-2 text-right">
+                <BsThreeDots
+                  className="text-lg sm:text-xl cursor-pointer"
+                  onClick={() => {
+                    Action(book._id);
+                  }}
+                />
+
+                {showModal && mybookId == book._id ? <Actionmodal /> : <></>}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};

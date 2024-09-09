@@ -5,12 +5,12 @@ import house from "../src/assets/house.svg";
 
 export const MemberAccount = () => {
   return (
-    <div className="mt-10 p-4 ">
-      <div className="flex flex-col md:flex-row items-center gap-4">
+    <div className="mt-10 p-4 flex flex-col lg:items-center gap-2 ">
+      <div className="flex flex-col md:flex-row items-center gap-4 lg:flex-col">
         <img className="w-32 md:w-38" src={profilepics} alt="" />
         <div className="flex flex-col">
           <h1 className="font-bold text-xl md:text-2xl">Ovie Victor</h1>
-          <h3 className="text-sm md:text-base">Librarian</h3>
+          <h3 className="text-sm md:text-base text-center">Librarian</h3>
         </div>
       </div>
 
@@ -51,7 +51,7 @@ export const MemberAccount = () => {
       </form>
 
       <form className="mt-6">
-        <div className="flex flex-col  xl:flex-row md:justify-between gap- w-full">
+        <div className="flex flex-col  xl:flex-row md:justify-between gap-2 w-full">
           <div className="flex flex-col">
             <label
               htmlFor="email"
@@ -78,7 +78,7 @@ export const MemberAccount = () => {
               type="date"
               id="dateOfBirth"
               name="dateOfBirth"
-              className="border w-full xl:w-[200px] p-3 mt-[-0.5rem] rounded-md"
+              className="border w-full xl:w-[190px] p-3 mt-[-0.5rem] rounded-md"
             />
           </div>
           <div className="flex flex-col">
@@ -146,7 +146,7 @@ export const MemberAccount = () => {
           </div>
         </div> */}
         <button
-          className="bg-[#518C36] mt-6 px-6 py-2 text-white rounded-lg"
+          className="bg-[#518C36] mt-6 px-6 py-2 text-white rounded-lg w-full"
           type="submit"
         >
           Save Changes

@@ -14,32 +14,32 @@ import { GoArrowSwitch, GoPeople } from "react-icons/go";
 function ChartComponent() {
   const visitorsData = [
     { name: "Jan", value: 0 },
-    { name: "Feb", value: 70 },
-    { name: "Mar", value: 100 },
-    { name: "Apr", value: 120 },
-    { name: "May", value: 170 },
-    { name: "Jun", value: 250 },
-    { name: "Jul", value: 290 },
-    { name: "Aug", value: 360 },
-    { name: "Sep", value: 500 },
-    { name: "Oct", value: 580 },
-    { name: "Nov", value: 700 },
-    { name: "Dec", value: 650 },
+    { name: "Feb", value: 0 },
+    { name: "Mar", value: 0 },
+    { name: "Apr", value: 0 },
+    { name: "May", value: 0 },
+    { name: "Jun", value: 0 },
+    { name: "Jul", value: 0 },
+    { name: "Aug", value: 0 },
+    { name: "Sep", value: 2 },
+    { name: "Oct", value: 0 },
+    { name: "Nov", value: 0 },
+    { name: "Dec", value: 0 },
   ];
 
   const borrowedBooksData = [
     { name: "Jan", value: 0 },
-    { name: "Feb", value: 70 },
-    { name: "Mar", value: 100 },
-    { name: "Apr", value: 120 },
-    { name: "May", value: 170 },
-    { name: "Jun", value: 250 },
-    { name: "Jul", value: 290 },
-    { name: "Aug", value: 360 },
-    { name: "Sep", value: 500 },
-    { name: "Oct", value: 580 },
-    { name: "Nov", value: 700 },
-    { name: "Dec", value: 650 },
+    { name: "Feb", value: 0 },
+    { name: "Mar", value: 0 },
+    { name: "Apr", value: 0 },
+    { name: "May", value: 0 },
+    { name: "Jun", value: 0 },
+    { name: "Jul", value: 0 },
+    { name: "Aug", value: 0 },
+    { name: "Sep", value: 0 },
+    { name: "Oct", value: 0 },
+    { name: "Nov", value: 0 },
+    { name: "Dec", value: 0 },
   ];
 
   return (
@@ -54,7 +54,7 @@ function ChartComponent() {
             />
             <div>
               <h3 className="text-lg font-bold">New Visitors</h3>
-              <p className="text-xl font-bold text-gray-800 mr-2">3,200</p>
+              <p className="text-xl font-bold text-gray-800 mr-2">2</p>
             </div>
           </div>
 
@@ -89,7 +89,7 @@ function ChartComponent() {
             <GoArrowSwitch className="w-6 h-6 text-orange-500 mr-3" />
             <div>
               <h3 className="text-lg font-bold">Books Borrowed</h3>
-              <p className="text-xl font-bold text-gray-800 mr-2">1,540</p>
+              <p className="text-xl font-bold text-gray-800 mr-2">0</p>
             </div>
           </div>
           <select className="bg-gray-100 text-gray-600 items- rounded">
